@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2012 Kinvey, Inc. All rights reserved.
+
+Licensed to Kinvey, Inc. under one or more contributor
+license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright
+ownership.  Kinvey, Inc. licenses this file to you under the
+Apache License, Version 2.0 (the "License"); you may not
+use this file except in compliance with the License.  You
+may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+]specific language governing permissions and limitations
+under the License.
+
+Author: Tom Giesberg -->
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/chalkboard">
+
+    <RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/green_toolbar"
+        android:padding="5sp">
+        <Button
+            android:id="@+id/cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/green_button"
+            android:textColor="@drawable/kinvey_button_text_color"
+            android:onClick="cancelSession"
+            android:text="Cancel" />
+        <TextView
+            android:id="@+id/toolbarTitle"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal|center_vertical"
+            android:layout_toRightOf="@+id/backButton"
+            android:paddingLeft="5sp"
+            android:paddingTop="5sp"
+            android:singleLine="true"
+            android:ellipsize="middle"
+            android:textColor="@drawable/kinvey_button_text_color"
+            android:textSize="20sp"
+            android:text="Edit Session"
+            />
+        <Button
+            android:id="@+id/post"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/green_button"
+            android:textColor="@drawable/kinvey_button_text_color"
+            android:onClick="postSession"
+            android:text="Post" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/editArea"
+        style="@style/RoundedLayout"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/toolbar"
+        android:layout_above="@+id/actionbar"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#526691"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:text="Title"
+            />
+        <EditText
+            android:id="@+id/title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter your session title"
+            android:imeOptions="actionNext">
+        </EditText>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#526691"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:text="Leader"
+            />
+        <EditText
+            android:id="@+id/leader"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter your session leader"
+            android:imeOptions="actionNext">
+        </EditText>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#526691"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:text="Location"
+            />
+        <EditText
+            android:id="@+id/location"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter the location"
+            android:imeOptions="actionNext">
+        </EditText>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#526691"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:text="Time"
+            />
+        <Spinner
+            android:id="@+id/time"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter your session title"
+            android:imeOptions="actionNext"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#526691"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:text="Description"
+            />
+        <EditText
+            android:id="@+id/description"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:padding="10dp"
+            android:hint="Enter your session description"
+            android:imeOptions="actionDone">
+        </EditText>
+    </LinearLayout>
+
+</LinearLayout>
+
