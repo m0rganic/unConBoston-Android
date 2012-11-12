@@ -57,11 +57,11 @@ public class MainApplication extends Application {
     KCS_TWITTER_CLIENT_SECRET : @"yUd8JGhUXQNUlHfZOFNaKpmYJcwAC3vJtbJHNarINY"};
 */    
 
-//    private static final String APP_KEY = "kid_PPnCuemfeJ";
-//    private static final String APP_SECRET = "9f99a4ff97764f8eb18e2d3eb3a1457f";
+    private static final String KINVEY_APP_KEY = "kid_PPnCuemfeJ";
+    private static final String KINVEY_APP_SECRET = "9f99a4ff97764f8eb18e2d3eb3a1457f";
 
-    private static final String APP_KEY = "kid_TTmQdBb2Pf"; // kid_TTLKLIe2N";
-    private static final String APP_SECRET = "6b47b78bee014f489c5ba3e593dfd8b5"; // 1c5df31e91554bdabf9cba77db4417a9";
+//    private static final String APP_KEY = "kid_TTmQdBb2Pf"; // kid_TTLKLIe2N";
+//    private static final String APP_SECRET = "6b47b78bee014f489c5ba3e593dfd8b5"; // 1c5df31e91554bdabf9cba77db4417a9";
 
     @Override
     public void onCreate() {
@@ -70,7 +70,7 @@ public class MainApplication extends Application {
     }
 
     private void initialize() {
-        mService = KCSClient.getInstance(this.getApplicationContext(), new KinveySettings(APP_KEY, APP_SECRET));
+        mService = KCSClient.getInstance(this.getApplicationContext(), new KinveySettings(KINVEY_APP_KEY, KINVEY_APP_SECRET));
 
         TimeZone reference = TimeZone.getTimeZone("GMT");
         mAppCalendar = Calendar.getInstance(reference);

@@ -106,25 +106,22 @@ public class CreateAccountActivity extends LoginActivity {
 
     @Override
     public void submit(View view) {
-        try {
-            mSharedClient.createUserWithUsername(mEditUserName.getText().toString(), mEditPassword.getText().toString(), new KinveyCallback<KinveyUser>() {
-                public void onFailure(Throwable t) {
-                    CharSequence text = "Username already exists. Please try again.";
-                    Toast.makeText(getApplicationContext(), text, Toast.LENGTH_SHORT).show();
-                }
 
-                public void onSuccess(KinveyUser u) {
-                    CharSequence text = "Welcome," + u.getUsername() + ".";
-                    Toast.makeText(getApplicationContext(), text, Toast.LENGTH_SHORT).show();
-                    CreateAccountActivity.this.startActivity(new Intent(CreateAccountActivity.this, SessionsActivity.class));
-                    CreateAccountActivity.this.finish();
-                }
+        mSharedClient.createUserWithUsername(mEditUserName.getText().toString(), mEditPassword.getText().toString(), new KinveyCallback<KinveyUser>() {
+            public void onFailure(Throwable t) {
+                CharSequence text = "Username already exists. Please try again.";
+                Toast.makeText(getApplicationContext(), text, Toast.LENGTH_SHORT).show();
+            }
 
-            });
+            public void onSuccess(KinveyUser u) {
+                CharSequence text = "Welcome," + u.getUsername() + ".";
+                Toast.makeText(getApplicationContext(), text, Toast.LENGTH_SHORT).show();
+                CreateAccountActivity.this.startActivity(new Intent(CreateAccountActivity.this, SessionsActivity.class));
+                CreateAccountActivity.this.finish();
+            }
 
-        } catch (com.kinvey.exception.KinveyException e) {
-            e.printStackTrace();
-        }
+        });
+
     }
 
     public void goToLogin(View view) {

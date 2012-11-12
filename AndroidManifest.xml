@@ -46,5 +46,6 @@ Author: Tom Giesberg -->
         <activity android:name="SessionsActivity"/>
         <activity android:name="UsersActivity"/>
         <activity android:name="ViewSessionActivity"/>
+        <activity android:name="LoginFacebookActivity"></activity>
     </application>
 </manifest>
