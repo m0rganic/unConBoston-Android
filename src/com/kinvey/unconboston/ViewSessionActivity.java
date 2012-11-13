@@ -23,32 +23,23 @@
 
 package com.kinvey.unconboston;
 
-import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.kinvey.KCSClient;
 import com.kinvey.MappedAppdata;
-import com.kinvey.exception.KinveyException;
 import com.kinvey.persistence.EntityDict;
 import com.kinvey.persistence.query.SimpleQuery;
-import com.kinvey.persistence.query.LimitQueryModifier;
-import com.kinvey.persistence.query.SortQueryModifier;
 import com.kinvey.util.ListCallback;
 import com.kinvey.util.ScalarCallback;
 

@@ -24,9 +24,7 @@
 package com.kinvey.unconboston;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Calendar;
-import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
@@ -36,23 +34,16 @@ import org.json.JSONObject;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
-import android.widget.ArrayAdapter;
-import android.widget.Toast;
-
-import android.view.ViewGroup.LayoutParams;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-
 import com.kinvey.KCSClient;
 import com.kinvey.KinveyUser;
 import com.kinvey.MappedAppdata;
-import com.kinvey.exception.KinveyException;
 import com.kinvey.persistence.query.SimpleQuery;
 import com.kinvey.persistence.query.SortQueryModifier;
 import com.kinvey.util.ListCallback;
@@ -164,8 +155,8 @@ public class SessionsActivity extends Activity {
                                 if (facebookIdentity != null) {
                                     user.setName(facebookIdentity.getString("name"));
                                 }
-                            } else if (socialIdentity.has("twitter") ==  true) {
-                                JSONObject twitterIdentity = socialIdentity.getJSONObject("twitter");                            
+                            } else if (socialIdentity.has("google") ==  true) {
+                                JSONObject twitterIdentity = socialIdentity.getJSONObject("google");                            
                                 if (twitterIdentity != null) {
                                     user.setName(twitterIdentity.getString("name"));
                                 }
@@ -188,7 +179,15 @@ public class SessionsActivity extends Activity {
 
     public void tryToLogout(View view) {
         mSharedClient.getCurrentUser().logout();
-        startActivity(new Intent(this, LoginSocialActivity.class));
+        
+        // deletes the saved user context
+        SharedPreferences userdetails = getSharedPreferences(LoginSocialActivity.USER_DETAILS, MODE_PRIVATE);
+        SharedPreferences.Editor editor = userdetails.edit();
+        editor.clear();
+        editor.commit();
+        
+        Intent intent = new Intent(this, LoginSocialActivity.class);
+        startActivity(intent);
         finish();
     }
 
