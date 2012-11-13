@@ -41,12 +41,20 @@ Author: Tom Giesberg -->
             android:text="Innovation 2012"
             />
         <Button
-            android:id="@+id/submit"
+            android:id="@+id/submitFacebook"
             style="@style/ButtonText"
             android:background="@drawable/green_button"
             android:textColor="@drawable/kinvey_button_text_color"
             android:text="Log in with Facebook"
-            android:onClick="submit"
+            android:onClick="submitFacebook"
+            />
+        <Button
+            android:id="@+id/submitGoogle"
+            style="@style/ButtonText"
+            android:background="@drawable/green_button"
+            android:textColor="@drawable/kinvey_button_text_color"
+            android:text="Log in with Google"
+            android:onClick="submitGoogle"
             />
     <ImageView
         android:layout_width="fill_parent"

@@ -58,7 +58,7 @@ public class MainActivity extends Activity {
 
             public void onSuccess(Boolean b) {
                 mStatus.setText("Connection good");
-                MainActivity.this.startActivity(new Intent(MainActivity.this, LoginFacebookActivity.class));
+                MainActivity.this.startActivity(new Intent(MainActivity.this, LoginSocialActivity.class));
                 MainActivity.this.finish();
             }
         });

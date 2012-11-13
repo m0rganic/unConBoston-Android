@@ -188,7 +188,7 @@ public class SessionsActivity extends Activity {
 
     public void tryToLogout(View view) {
         mSharedClient.getCurrentUser().logout();
-        startActivity(new Intent(this, LoginFacebookActivity.class));
+        startActivity(new Intent(this, LoginSocialActivity.class));
         finish();
     }
 
